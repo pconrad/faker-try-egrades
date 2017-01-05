@@ -1,4 +1,4 @@
-#!/Users/pconrad/.rvm/rubies/ruby-2.3.3/bin/ruby
+#!/usr/bin/env ruby
 
 require 'optparse'
 require 'faker'
@@ -31,7 +31,7 @@ puts "Enrl Cd,Perm #,Grade,Final Units,Student Last,Student First Middle,Quarter
 puts ""
 (1..options[:count]).each do |i| 
 
-  perm = Faker::Number.number(7)
+  perm = Faker::Number.unique.number(7)
   student_last = Faker::Name.last_name
   student_first = Faker::Name.first_name
   student_middle = ["", " "+Faker::Name.first_name].sample
